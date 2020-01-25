@@ -1,0 +1,19 @@
+{
+  "name": "@zzopark/validation",
+  "version": "1.0.0",
+  "description": "Module with functions for validation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zzoPark/validation.git"
+  },
+  "author": "zzoPark",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zzoPark/validation/issues"
+  },
+  "homepage": "https://github.com/zzoPark/validation#readme"
+}
