@@ -1,26 +1,28 @@
-const { removeDups } = require('@zzopark/common-utils')
+const util = require('./util')
 
-exports.required = (v) => !!v || 'Required.'
+const rules = {}
 
-exports.notAllowed = (regex) => (v) => {
-  const matches = v.match(regex)
-  if (matches === null) return true
-  return `Not allowed characters ${removeDups(matches)}`
-}
+// Title
+rules.title = [
+  util.required
+]
 
-exports.noSpaces = (v) => {
-  const regex = /[\s]+/
-  return regex.test(v) || 'No spaces.'
-}
+// Slug
+const slugNotAllowed = /([`!@#$%^&*()_+=|\\/[\]{},.<>?'"])/g
+rules.slug = [
+  util.required,
+  util.notAllowed(slugNotAllowed),
+  util.noSpaces,
+  util.notStartWith('-'),
+  util.notEndWith('-')
+]
 
-exports.minLength = (min) => (v) => (
-  v.length >= min || `Need more than ${min} characters.`
-)
+// Tags
+const tagsNotAllowed = /([`!@#$%^*|\[]{},.<>?'"])/g
+rules.tags = [
+  util.notAllowed(tagsNotAllowed),
+  util.notStartWith('-'),
+  util.notEndWith('-')
+]
 
-exports.notStartWith = (s) => (v) => (
-  !v.startsWith(s) || `Cannot start with "${s}".`
-)
-
-exports.notEndWith = (s) => (v) => (
-  !v.endsWith(s) || `Cannot end with "${s}".`
-)
+module.exports = { rules, util }
