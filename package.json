@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/zzoPark/validation/issues"
   },
-  "homepage": "https://github.com/zzoPark/validation#readme"
+  "homepage": "https://github.com/zzoPark/validation#readme",
+  "dependencies": {
+    "@zzopark/common-utils": "^1.0.0"
+  }
 }
