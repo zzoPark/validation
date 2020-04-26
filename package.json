@@ -1,8 +1,8 @@
 {
   "name": "@zzopark/validation",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Module with functions for validation.",
-  "main": "index.js",
+  "main": "lib/module.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
